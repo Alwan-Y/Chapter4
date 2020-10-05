@@ -1,0 +1,127 @@
+body {
+    background-color: #9b835f;
+}
+
+.back-btn {
+    font-weight: bold;
+    font-size: 35pt;
+    color: #714c20;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.game-title {
+    color: #f9b23e;
+    font-weight: bold;
+    font-family: Open Sans;
+    font-size: 16pt;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+h2 {
+    font-weight: bold;
+    font-family: Open Sans;
+    color: black;
+    font-size: 14pt;
+}
+
+img {
+    width: 60px;
+}
+
+.game-result {
+    font-size: 50pt;
+    color: #bd0100;
+    font-weight: bold;
+}
+
+.mar-cus {
+    margin-top: 15px;
+}
+
+.mar-aut {
+    margin: auto;
+}
+
+/* Dekstop */
+@media (min-width: 992px) {
+    body {
+        background-color: #9b835f;
+    }
+
+    .back-btn {
+        font-weight: bold;
+        font-size: 60px;
+        color: #714c20;
+        margin-top: 15px;
+        margin-right: 10px;
+    }
+
+    .game-title {
+        color: #f9b23e;
+        font-weight: bold;
+        font-family: Open Sans;
+        font-size: 40pt;
+        margin-top: 18px;
+        margin-left: 10px;
+    }
+
+    .logo {
+        margin-top: 10px;
+        width: 5.5em;
+        height: auto;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-family: Open Sans;
+        color: black;
+        font-size: 36pt;
+    }
+
+    img {
+        width: 7em;
+    }
+
+    .game-result {
+        font-size: 7em;
+        color: #bd0100;
+        font-weight: bold;
+        padding: auto;
+    }
+
+    .refresh-btn {
+        width: 80px;
+    }
+
+    .mar-cus {
+        margin-top: 40px;
+    }
+
+
+    .mar-cus {
+        margin-top: 40px;
+    }
+
+    .mar-cus {
+        margin-top: 40px;
+    }
+
+    .refresh-btn {
+        width: 80px;
+    }
+
+    .mar-cus {
+        margin-top: 40px;
+    }
+
+    .mar-aut {
+        margin: auto;
+    }
+}
