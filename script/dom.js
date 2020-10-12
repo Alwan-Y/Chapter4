@@ -16,11 +16,14 @@ const getResult = (player, computer) => {
 const playerChoice = document.querySelectorAll('.player')
 playerChoice.forEach((choice) => {
     choice.addEventListener('click', () => {
-        const playerChoice = choice.classList[0]
+        const playerChoice = choice.classList[1]
         const computerChoice = getComputerChoice()
+        const result = getResult(playerChoice, computerChoice)
         console.log(playerChoice)
         console.log(computerChoice)
-
-
+        console.log(result)
     })
 })
+
+const resultDisplay = document.getElementById('gameResult')
+const refresh = document.querySelector('.refresh')
