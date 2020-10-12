@@ -6,24 +6,71 @@ const getComputerChoice = () => {
     return 'paper'
 }
 
+let startResult = null
 const getResult = (player, computer) => {
-    if (player == computer) return 'DRAW'
-    if (player == 'rock') return (computer == 'scissor') ? 'WINNER' : "LOSER"
-    if (player == 'scissor') return (computer == 'rock') ? 'LOSER' : 'WINNER'
-    if (player == 'paper') return (computer == 'scissor') ? 'LOSER' : 'WINNER'
+    if (player == computer) return result = 'DRAW'
+    if (player == 'rock') return (computer == 'scissor') ? startResult = 'WINNER' : startResult = 'LOSER'
+    if (player == 'scissor') return (computer == 'rock') ? startResult = 'LOSER' : startResult = 'WINNER'
+    if (player == 'paper') return (computer == 'scissor') ? startResult = 'LOSER' : startResult = 'WINNER'
+}
+
+const turning = () => {
+    const bgComputer = document.querySelectorAll('.computer')
+
+}
+
+const endResult = (result) => {
+    if ('DRAW' == result) {
+        resultDisplay.innerHTML = 'DRAW';
+        resultDisplay.style.color = 'white'
+        resultDisplay.style.fontSize = '40px'
+        resultDisplay.style.backgroundColor = '#1A6932'
+        resultDisplay.style.padding = '20px'
+    } else if ('WINNER' == result) {
+        resultDisplay.innerHTML = 'PLAYER WIN';
+        resultDisplay.style.color = 'white'
+        resultDisplay.style.fontSize = '30px'
+        resultDisplay.style.backgroundColor = '#4c9653'
+        resultDisplay.style.padding = '15px'
+    } else if ('LOSER' == result) {
+        resultDisplay.innerHTML = 'COM WIN';
+        resultDisplay.style.color = 'white'
+        resultDisplay.style.fontSize = '30px'
+        resultDisplay.style.backgroundColor = '#4c9653'
+        resultDisplay.style.padding = '15px'
+    } else {
+        resultDisplay.innerHTML = 'VS';
+        resultDisplay.style.backgroundColor = '#9b835f'
+        resultDisplay.style.fontSize = '40pt'
+        resultDisplay.style.color = '#bd0100'
+        resultDisplay.style.fontWeight = 'bolder'
+    }
 }
 
 const playerChoice = document.querySelectorAll('.player')
 playerChoice.forEach((choice) => {
     choice.addEventListener('click', () => {
-        const playerChoice = choice.classList[1]
-        const computerChoice = getComputerChoice()
-        const result = getResult(playerChoice, computerChoice)
-        console.log(playerChoice)
-        console.log(computerChoice)
-        console.log(result)
+        if (startResult === null) {
+            const playerChoice = choice.classList[1]
+            const computerChoice = getComputerChoice()
+            const result = getResult(playerChoice, computerChoice)
+            choice.style.backgroundColor = '#d8d8d8'
+            choice.style.padding = '5px'
+            console.log(playerChoice)
+            console.log(computerChoice)
+            console.log(result)
+            endResult(result)
+        } else if (startResult) {
+            alert('Tekan Refresh dulu !!')
+        }
     })
 })
 
 const resultDisplay = document.getElementById('gameResult')
 const refresh = document.querySelector('.refresh')
+
+refresh.addEventListener('click', () => {
+    let status = null;
+    endResult(status)
+    startResult = null;
+})
