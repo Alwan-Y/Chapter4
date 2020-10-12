@@ -37,7 +37,7 @@ img {
 
 .game-result {
     font-size: 50pt;
-    color: #bd0100;
+    color: #d8d8d8;
     font-weight: bold;
 }
 
@@ -47,6 +47,11 @@ img {
 
 .mar-aut {
     margin: auto;
+}
+
+.mix {
+    background-color: #d8d8d8;
+    padding: 5px;
 }
 
 
