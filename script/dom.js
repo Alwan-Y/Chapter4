@@ -4,7 +4,7 @@ const playerChoice = document.querySelectorAll('.player')
 const computerChoice = document.querySelectorAll('.computer')
 const compRock = document.querySelector('.compRock')
 const compPaper = document.querySelector('.compPaper')
-const compScissor = document.querySelector('compScissor')
+const compScis = document.querySelector('.compScissor')
 
 
 const getComputerChoice = () => {
@@ -91,23 +91,23 @@ playerChoice.forEach((choice) => {
             console.log(playerChoice)
             console.log(computerChoice)
             console.log(startResult)
-            endResult(startResult)
+            // endResult(startResult)
             reset = choice
 
             turning()
 
-            // setTimeout(() => {
-            //     if (computerChoice == 'rock') {
-            //         computerChoice[0].classList.toggle('mix')
-            //         computerChoice[2].classList.toggle('mix')
-            //     } else if (computerChoice == 'paper') {
-            //         computerChoice[1].classList.toggle('mix')
-            //         computerChoice[2].classList.toggle('mix')
-            //     } else if (computerChoice == 'scissor') {
-            //         computerChoice[0].classList.toggle('mix')
-            //         computerChoice[2].classList.toggle('mix')
-            //     }
-            // }, 1000)
+            setTimeout(() => {
+                if (computerChoice == 'rock') {
+                    compRock.classList.add('mix')
+                    endResult(startResult)
+                } else if (computerChoice == 'paper') {
+                    compPaper.classList.add('mix')
+                    endResult(startResult)
+                } else if (computerChoice == 'scissor') {
+                    compScis.classList.add('mix')
+                    endResult(startResult)
+                }
+            }, 1200);
         } else if (startResult) {
             alert('Tekan Refresh dulu !!')
         }
