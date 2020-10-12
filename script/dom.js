@@ -1,7 +1,7 @@
 const resultDisplay = document.getElementById('gameResult')
 const refresh = document.querySelector('.refresh')
 const playerChoice = document.querySelectorAll('.player')
-const bgComputer = document.querySelectorAll('.computer')
+const computerChoice = document.querySelectorAll('.computer')
 
 const getComputerChoice = () => {
     const computer = Math.random()
@@ -13,7 +13,7 @@ const getComputerChoice = () => {
 
 let startResult = null
 const getResult = (player, computer) => {
-    if (player == computer) return result = 'DRAW'
+    if (player == computer) return startResult = 'DRAW'
     if (player == 'rock') return (computer == 'scissor') ? startResult = 'WINNER' : startResult = 'LOSER'
     if (player == 'scissor') return (computer == 'rock') ? startResult = 'LOSER' : startResult = 'WINNER'
     if (player == 'paper') return (computer == 'scissor') ? startResult = 'LOSER' : startResult = 'WINNER'
@@ -28,6 +28,12 @@ const turning = () => {
             clearInterval
             return
         }
+        computerChoice[i++].style.backgroundColor = '#1A6932'
+        if (i == computerChoice.length) {
+            i = 0
+        }
+        computerChoice[i].style.backgroundColor = '#d8d8d8'
+        computerChoice[i].style.padding = '5px'
     }
 
 }
@@ -84,6 +90,6 @@ refresh.addEventListener('click', () => {
     reset.style.backgroundColor = '#9b835f'
     reset.style.padding = '0px'
     startResult = null
-    console.log(startResult)
+    // console.log(startResult)
     endResult(startResult)
 })
