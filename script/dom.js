@@ -1,3 +1,8 @@
+const resultDisplay = document.getElementById('gameResult')
+const refresh = document.querySelector('.refresh')
+const playerChoice = document.querySelectorAll('.player')
+const bgComputer = document.querySelectorAll('.computer')
+
 const getComputerChoice = () => {
     const computer = Math.random()
 
@@ -15,7 +20,15 @@ const getResult = (player, computer) => {
 }
 
 const turning = () => {
-    const bgComputer = document.querySelectorAll('.computer')
+    const start = new Date().getTime();
+    let i = 0;
+
+    setInterval = () => {
+        if (new Date().getTime() - start >= 1000) {
+            clearInterval
+            return
+        }
+    }
 
 }
 
@@ -47,34 +60,30 @@ const endResult = (result) => {
     }
 }
 
-let kotak = ''
-const playerChoice = document.querySelectorAll('.player')
+let reset = ''
 playerChoice.forEach((choice) => {
     choice.addEventListener('click', () => {
         if (startResult === null) {
             const playerChoice = choice.classList[1]
             const computerChoice = getComputerChoice()
-            const result = getResult(playerChoice, computerChoice)
+            getResult(playerChoice, computerChoice)
             choice.style.backgroundColor = '#d8d8d8'
             choice.style.padding = '5px'
             console.log(playerChoice)
             console.log(computerChoice)
-            console.log(result)
-            endResult(result)
-            kotak = choice
-            console.log(kotak)
+            console.log(startResult)
+            endResult(startResult)
+            reset = choice
         } else if (startResult) {
             alert('Tekan Refresh dulu !!')
         }
     })
 })
 
-const resultDisplay = document.getElementById('gameResult')
-const refresh = document.querySelector('.refresh')
-
 refresh.addEventListener('click', () => {
-    kotak.style.backgroundColor = '#9b835f'
-    kotak.style.padding = '-10px'
+    reset.style.backgroundColor = '#9b835f'
+    reset.style.padding = '0px'
     startResult = null
+    console.log(startResult)
     endResult(startResult)
 })
