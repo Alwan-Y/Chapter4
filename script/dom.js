@@ -47,6 +47,7 @@ const endResult = (result) => {
     }
 }
 
+let kotak = ''
 const playerChoice = document.querySelectorAll('.player')
 playerChoice.forEach((choice) => {
     choice.addEventListener('click', () => {
@@ -60,6 +61,8 @@ playerChoice.forEach((choice) => {
             console.log(computerChoice)
             console.log(result)
             endResult(result)
+            kotak = choice
+            console.log(kotak)
         } else if (startResult) {
             alert('Tekan Refresh dulu !!')
         }
@@ -70,7 +73,8 @@ const resultDisplay = document.getElementById('gameResult')
 const refresh = document.querySelector('.refresh')
 
 refresh.addEventListener('click', () => {
-    let status = null;
-    endResult(status)
-    startResult = null;
+    kotak.style.backgroundColor = '#9b835f'
+    kotak.style.padding = '-10px'
+    startResult = null
+    endResult(startResult)
 })
