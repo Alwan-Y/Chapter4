@@ -61,7 +61,7 @@ const endResult = (result) => {
     } else if ('WINNER' == result) {
         resultDisplay.innerHTML = 'PLAYER WIN';
         resultDisplay.style.color = 'white'
-        resultDisplay.style.fontSize = '150%'
+        resultDisplay.style.fontSize = '120%'
         resultDisplay.style.backgroundColor = '#4c9653'
         resultDisplay.style.padding = '10%'
     } else if ('LOSER' == result) {
@@ -74,7 +74,7 @@ const endResult = (result) => {
         resultDisplay.innerHTML = 'VS';
         resultDisplay.style.backgroundColor = '#9b835f'
         resultDisplay.style.fontSize = '40pt'
-        resultDisplay.style.color = '#bd0100'
+        resultDisplay.style.color = 'red'
         resultDisplay.style.fontWeight = 'bolder'
     }
 }
@@ -92,7 +92,6 @@ playerChoice.forEach((choice) => {
             console.log(playerChoice)
             console.log(computerChoice)
             console.log(startResult)
-            // endResult(startResult)
             reset = choice
 
             turning()
