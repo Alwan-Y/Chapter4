@@ -80,6 +80,7 @@ const endResult = (result) => {
 }
 
 let reset = ''
+let changeComputerValue = ''
 playerChoice.forEach((choice) => {
     choice.addEventListener('click', () => {
         if (startResult === null) {
@@ -100,12 +101,17 @@ playerChoice.forEach((choice) => {
                 if (computerChoice == 'rock') {
                     compRock.classList.add('mix')
                     endResult(startResult)
-                } else if (computerChoice == 'paper') {
+                    return changeComputerValue = 'rock'
+                }
+                if (computerChoice == 'paper') {
                     compPaper.classList.add('mix')
                     endResult(startResult)
-                } else if (computerChoice == 'scissor') {
+                    return changeComputerValue = 'paper'
+                }
+                if (computerChoice == 'scissor') {
                     compScis.classList.add('mix')
                     endResult(startResult)
+                    return changeComputerValue = 'scissor'
                 }
             }, 1200);
         } else if (startResult) {
@@ -118,6 +124,14 @@ refresh.addEventListener('click', () => {
     reset.style.backgroundColor = '#9b835f'
     reset.style.padding = '0px'
     startResult = null
+    if (changeComputerValue == 'rock') {
+        compRock.classList.remove('mix')
+    } else if (changeComputerValue == 'paper') {
+        compPaper.classList.remove('mix')
+    } else {
+        compScis.classList.remove('mix')
+    }
+
     // console.log(startResult)
     endResult(startResult)
 })
